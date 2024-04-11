@@ -19,6 +19,7 @@ public class Yatzy1Test {
     @Test public void yatzy_scores_50() {
         assertEquals(50, new Yatzy1().yatzy(new DiceRoll(4, 4, 4, 4, 4)));
         assertEquals(50, new Yatzy1().yatzy(new DiceRoll(6, 6, 6, 6, 6)));
+        assertEquals(50, new Yatzy1().yatzy(new DiceRoll(1, 1, 1, 1, 1)));
         assertEquals(0, new Yatzy1().yatzy(new DiceRoll(6, 6, 6, 6, 3)));
     }
 

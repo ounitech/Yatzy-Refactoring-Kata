@@ -11,12 +11,7 @@ public class Yatzy1 {
 
     public int yatzy(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        int[] dices= {diceRoll.getD1(), diceRoll.getD2(), diceRoll.getD3(), diceRoll.getD4(), diceRoll.getD5()};
-        for (int dice : dices){
-            counts[dice-1]++;
-        }
-
+        int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
             if (counts[i] == 5){
                 return 50;
