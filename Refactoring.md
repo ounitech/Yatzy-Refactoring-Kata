@@ -39,3 +39,20 @@ After watching the video and reading the rules, I took a first glance at Yatzy1 
 
 The presence of unit test and the spotting of some easy to fix code flaws is encouraging since we could establish
 quickly a first plan for code refactoring. Further analysis will be conducted after this first pass.
+
+#### First Phase Progress
+
+- Analysis of game rules described by Emily : Done
+- Analysis unit test : Done (below details)
+    - add edge case for each method
+    - very small refactorings : inlining some variables, use assertEquals, move test to the wright method
+    - renaming all tests using snake case. Each name is a phrase describing explicitly the game rule tested
+    - analysing unit test manually shows that coverage is ok even if my IDE indicates that some lines of certain methods
+      are not tested
+- First production code refactoring : Done (below details)
+    - move constructor and field up
+    - renaming all methods using camelCase
+    - make all methods static and receive as input the five dices 
+      - This will help us going further with refactoring and
+        replacing the five ints with a the class DiceRoll or any other refactoring.
+    - remove constructor and dices field
