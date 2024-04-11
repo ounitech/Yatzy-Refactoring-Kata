@@ -2,7 +2,7 @@ package org.codingdojo.yatzy1;
 
 public class Yatzy1 {
 
-    protected int[] dice;
+    private int[] dice;
 
     public Yatzy1(int d1, int d2, int d3, int d4, int _5)
     {
