@@ -16,9 +16,11 @@ public class Yatzy1 {
         for (int dice : dices){
             counts[dice-1]++;
         }
-        for (int i = 0; i != 6; i++){
-            if (counts[i] == 5)
+
+        for (int i = 0; i < 6; i++){
+            if (counts[i] == 5){
                 return 50;
+            }
         }
         return 0;
     }
@@ -58,7 +60,7 @@ public class Yatzy1 {
         counts[diceRoll.getD3() -1]++;
         counts[diceRoll.getD4() -1]++;
         counts[diceRoll.getD5() -1]++;
-        for (int i = 0; i != 6; i++){
+        for (int i = 0; i < 6; i++){
             if (counts[6-i-1] >= 2)
                 return (6-i)*2;
         }
@@ -75,7 +77,7 @@ public class Yatzy1 {
         counts[diceRoll.getD5() -1]++;
         int n = 0;
         int score = 0;
-        for (int i = 0; i < 6; i += 1){
+        for (int i = 0; i < 6; i ++){
             if (counts[6-i-1] >= 2) {
                 n++;
                 score += (6-i);
@@ -164,14 +166,14 @@ public class Yatzy1 {
         boolean _3 = false;
         int _3_at = 0;
 
-        for (i = 0; i != 6; i += 1) {
+        for (i = 0; i < 6; i++) {
             if (counts[i] == 2) {
                 _2 = true;
                 _2_at = i + 1;
             }
         }
 
-        for (i = 0; i != 6; i += 1) {
+        for (i = 0; i < 6; i++) {
             if (counts[i] == 3) {
                 _3 = true;
                 _3_at = i + 1;
