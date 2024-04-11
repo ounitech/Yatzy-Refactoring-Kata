@@ -17,14 +17,3 @@ I recently added new refactoring challenges to the Java version and I would appr
 
 ## Code Reading Practice
 Test your code reading skills. Here is a description of what to do: [Scanning for Code Smells](https://sammancoaching.org/exercises/code_reading.html). There are suitable lists of urls to open in some of the language subdirectories.
-
-## Java Version
-
-There are three variants of this kata each with different refactoring challenges.
-
-### Code Reading Practice
-Here is a list of github urls of all the YatzyCalculator Java classes:
-
-* [Yatzy1](https://github.com/emilybache/Yatzy-Refactoring-Kata/blob/main/java/src/main/java/org/codingdojo/yatzy1/Yatzy1.java)
-* [Yatzy2](https://github.com/emilybache/Yatzy-Refactoring-Kata/blob/main/java/src/main/java/org/codingdojo/yatzy2/Yatzy2.java)
-* [Yatzy3](https://github.com/emilybache/Yatzy-Refactoring-Kata/blob/main/java/src/main/java/org/codingdojo/yatzy3/Yatzy3.java)
