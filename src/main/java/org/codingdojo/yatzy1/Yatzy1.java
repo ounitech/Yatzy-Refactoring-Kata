@@ -2,18 +2,6 @@ package org.codingdojo.yatzy1;
 
 public class Yatzy1 {
 
-    private int[] dice;
-
-    public Yatzy1(int d1, int d2, int d3, int d4, int d5)
-    {
-        dice = new int[5];
-        dice[0] = d1;
-        dice[1] = d2;
-        dice[2] = d3;
-        dice[3] = d4;
-        dice[4] = d5;
-    }
-
     public static int chance(int d1, int d2, int d3, int d4, int d5)
     {
         int total = 0;
