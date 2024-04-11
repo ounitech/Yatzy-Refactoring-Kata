@@ -2,7 +2,7 @@ package org.codingdojo.yatzy1;
 
 public class Yatzy1 {
 
-    public static int chance(DiceRoll diceRoll)
+    public int chance(DiceRoll diceRoll)
     {
         int total = 0;
         total += diceRoll.getD1();
@@ -13,7 +13,7 @@ public class Yatzy1 {
         return total;
     }
 
-    public static int yatzy(DiceRoll diceRoll)
+    public int yatzy(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         int[] dices= {diceRoll.getD1(), diceRoll.getD2(), diceRoll.getD3(), diceRoll.getD4(), diceRoll.getD5()};
@@ -27,7 +27,7 @@ public class Yatzy1 {
         return 0;
     }
 
-    public static int ones(DiceRoll diceRoll) {
+    public int ones(DiceRoll diceRoll) {
         int sum = 0;
         if (diceRoll.getD1() == 1) sum++;
         if (diceRoll.getD2() == 1) sum++;
@@ -37,7 +37,7 @@ public class Yatzy1 {
         return sum;
     }
 
-    public static int twos(DiceRoll diceRoll) {
+    public int twos(DiceRoll diceRoll) {
         int sum = 0;
         if (diceRoll.getD1() == 2) sum += 2;
         if (diceRoll.getD2() == 2) sum += 2;
@@ -47,7 +47,7 @@ public class Yatzy1 {
         return sum;
     }
 
-    public static int threes(DiceRoll diceRoll) {
+    public int threes(DiceRoll diceRoll) {
         int sum = 0;
         if (diceRoll.getD1() == 3) sum += 3;
         if (diceRoll.getD2() == 3) sum += 3;
@@ -57,7 +57,7 @@ public class Yatzy1 {
         return sum;
     }
 
-    public static int fours(DiceRoll diceRoll)
+    public int fours(DiceRoll diceRoll)
     {
         int sum = 0;
         if (diceRoll.getD1() == 4) sum += 4;
@@ -68,7 +68,7 @@ public class Yatzy1 {
         return sum;
     }
 
-    public static int fives(DiceRoll diceRoll)
+    public int fives(DiceRoll diceRoll)
     {
         int sum = 0;
         if (diceRoll.getD1() == 5) sum += 5;
@@ -79,7 +79,7 @@ public class Yatzy1 {
         return sum;
     }
 
-    public static int sixes(DiceRoll diceRoll)
+    public int sixes(DiceRoll diceRoll)
     {
         int sum = 0;
         if (diceRoll.getD1() == 6) sum += 6;
@@ -90,7 +90,7 @@ public class Yatzy1 {
         return sum;
     }
 
-    public static int onePair(DiceRoll diceRoll)
+    public int onePair(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1]++;
@@ -105,7 +105,7 @@ public class Yatzy1 {
         return 0;
     }
 
-    public static int twoPairs(DiceRoll diceRoll)
+    public int twoPairs(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1]++;
@@ -124,7 +124,7 @@ public class Yatzy1 {
         return n == 2 ? score * 2 : 0;
     }
 
-    public static int fourOfAKind(DiceRoll diceRoll)
+    public int fourOfAKind(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1]++;
@@ -139,7 +139,7 @@ public class Yatzy1 {
         return 0;
     }
 
-    public static int threeOfAKind(DiceRoll diceRoll)
+    public int threeOfAKind(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1]++;
@@ -154,7 +154,7 @@ public class Yatzy1 {
         return 0;
     }
 
-    public static int smallStraight(DiceRoll diceRoll)
+    public int smallStraight(DiceRoll diceRoll)
     {
         int[] counts;
         counts = new int[6];
@@ -172,7 +172,7 @@ public class Yatzy1 {
         return 0;
     }
 
-    public static int largeStraight(DiceRoll diceRoll)
+    public int largeStraight(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1] += 1;
@@ -189,7 +189,7 @@ public class Yatzy1 {
         return 0;
     }
 
-    public static int fullHouse(DiceRoll diceRoll)
+    public int fullHouse(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1] += 1;
