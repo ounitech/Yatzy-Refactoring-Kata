@@ -1,16 +1,12 @@
 package org.codingdojo.yatzy1;
 
+import java.util.stream.IntStream;
+
 public class Yatzy1 {
 
     public int chance(DiceRoll diceRoll)
     {
-        int total = 0;
-        total += diceRoll.getD1();
-        total += diceRoll.getD2();
-        total += diceRoll.getD3();
-        total += diceRoll.getD4();
-        total += diceRoll.getD5();
-        return total;
+        return dices(diceRoll).sum();
     }
 
     public int yatzy(DiceRoll diceRoll)
@@ -28,66 +24,30 @@ public class Yatzy1 {
     }
 
     public int ones(DiceRoll diceRoll) {
-        int sum = 0;
-        if (diceRoll.getD1() == 1) sum++;
-        if (diceRoll.getD2() == 1) sum++;
-        if (diceRoll.getD3() == 1) sum++;
-        if (diceRoll.getD4() == 1) sum++;
-        if (diceRoll.getD5() == 1) sum++;
-        return sum;
+        return dices(diceRoll).filter(value -> value == 1).sum();
     }
 
     public int twos(DiceRoll diceRoll) {
-        int sum = 0;
-        if (diceRoll.getD1() == 2) sum += 2;
-        if (diceRoll.getD2() == 2) sum += 2;
-        if (diceRoll.getD3() == 2) sum += 2;
-        if (diceRoll.getD4() == 2) sum += 2;
-        if (diceRoll.getD5() == 2) sum += 2;
-        return sum;
+        return dices(diceRoll).filter(value -> value == 2).sum();
     }
 
     public int threes(DiceRoll diceRoll) {
-        int sum = 0;
-        if (diceRoll.getD1() == 3) sum += 3;
-        if (diceRoll.getD2() == 3) sum += 3;
-        if (diceRoll.getD3() == 3) sum += 3;
-        if (diceRoll.getD4() == 3) sum += 3;
-        if (diceRoll.getD5() == 3) sum += 3;
-        return sum;
+        return dices(diceRoll).filter(value -> value == 3).sum();
     }
 
     public int fours(DiceRoll diceRoll)
     {
-        int sum = 0;
-        if (diceRoll.getD1() == 4) sum += 4;
-        if (diceRoll.getD2() == 4) sum += 4;
-        if (diceRoll.getD3() == 4) sum += 4;
-        if (diceRoll.getD4() == 4) sum += 4;
-        if (diceRoll.getD5() == 4) sum += 4;
-        return sum;
+        return dices(diceRoll).filter(value -> value == 4).sum();
     }
 
     public int fives(DiceRoll diceRoll)
     {
-        int sum = 0;
-        if (diceRoll.getD1() == 5) sum += 5;
-        if (diceRoll.getD2() == 5) sum += 5;
-        if (diceRoll.getD3() == 5) sum += 5;
-        if (diceRoll.getD4() == 5) sum += 5;
-        if (diceRoll.getD5() == 5) sum += 5;
-        return sum;
+        return dices(diceRoll).filter(value -> value == 5).sum();
     }
 
     public int sixes(DiceRoll diceRoll)
     {
-        int sum = 0;
-        if (diceRoll.getD1() == 6) sum += 6;
-        if (diceRoll.getD2() == 6) sum += 6;
-        if (diceRoll.getD3() == 6) sum += 6;
-        if (diceRoll.getD4() == 6) sum += 6;
-        if (diceRoll.getD5() == 6) sum += 6;
-        return sum;
+        return dices(diceRoll).filter(value -> value == 6).sum();
     }
 
     public int onePair(DiceRoll diceRoll)
@@ -219,6 +179,16 @@ public class Yatzy1 {
         }
 
         return _2 && _3 ? _2_at * 2 + _3_at * 3 : 0;
+    }
+
+    private static IntStream dices(DiceRoll diceRoll) {
+        return IntStream.of(
+            diceRoll.getD1(),
+            diceRoll.getD2(),
+            diceRoll.getD3(),
+            diceRoll.getD4(),
+            diceRoll.getD5()
+        );
     }
 }
 
