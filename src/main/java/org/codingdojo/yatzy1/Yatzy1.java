@@ -118,13 +118,12 @@ public class Yatzy1 {
 
     public int smallStraight(DiceRoll diceRoll)
     {
-        int[] counts;
-        counts = new int[6];
-        counts[diceRoll.getD1() -1] += 1;
-        counts[diceRoll.getD2() -1] += 1;
-        counts[diceRoll.getD3() -1] += 1;
-        counts[diceRoll.getD4() -1] += 1;
-        counts[diceRoll.getD5() -1] += 1;
+        int[] counts = new int[6];
+        counts[diceRoll.getD1() - 1]++;
+        counts[diceRoll.getD2() - 1]++;
+        counts[diceRoll.getD3() - 1]++;
+        counts[diceRoll.getD4() - 1]++;
+        counts[diceRoll.getD5() - 1]++;
         if (counts[0] == 1 &&
             counts[1] == 1 &&
             counts[2] == 1 &&
@@ -137,11 +136,11 @@ public class Yatzy1 {
     public int largeStraight(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
-        counts[diceRoll.getD1() -1] += 1;
-        counts[diceRoll.getD2() -1] += 1;
-        counts[diceRoll.getD3() -1] += 1;
-        counts[diceRoll.getD4() -1] += 1;
-        counts[diceRoll.getD5() -1] += 1;
+        counts[diceRoll.getD1() - 1]++;
+        counts[diceRoll.getD2() - 1]++;
+        counts[diceRoll.getD3() - 1]++;
+        counts[diceRoll.getD4() - 1]++;
+        counts[diceRoll.getD5() - 1]++;
         if (counts[1] == 1 &&
             counts[2] == 1 &&
             counts[3] == 1 &&
@@ -154,11 +153,11 @@ public class Yatzy1 {
     public int fullHouse(DiceRoll diceRoll)
     {
         int[] counts = new int[6];
-        counts[diceRoll.getD1() -1] += 1;
-        counts[diceRoll.getD2() -1] += 1;
-        counts[diceRoll.getD3() -1] += 1;
-        counts[diceRoll.getD4() -1] += 1;
-        counts[diceRoll.getD5() -1] += 1;
+        counts[diceRoll.getD1() - 1]++;
+        counts[diceRoll.getD2() - 1]++;
+        counts[diceRoll.getD3() - 1]++;
+        counts[diceRoll.getD4() - 1]++;
+        counts[diceRoll.getD5() - 1]++;
 
         boolean _2 = false;
         int i;
