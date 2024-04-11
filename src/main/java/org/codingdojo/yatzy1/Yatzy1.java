@@ -56,8 +56,9 @@ public class Yatzy1 {
     {
         int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
-            if (counts[6-i-1] >= 2)
+            if (counts[6-i-1] >= 2) { // reverse order to capture the highest pair first
                 return (6-i)*2;
+            }
         }
         return 0;
     }
@@ -65,23 +66,24 @@ public class Yatzy1 {
     public int twoPairs(DiceRoll diceRoll)
     {
         int[] counts = countOccurrences(diceRoll);
-        int n = 0;
+        int numberOfPairs = 0;
         int score = 0;
         for (int i = 0; i < 6; i ++){
-            if (counts[6-i-1] >= 2) {
-                n++;
+            if (counts[6-i-1] >= 2) { // TODO no need for reverse order here (never mind)
+                numberOfPairs++;
                 score += (6-i);
             }
         }
-        return n == 2 ? score * 2 : 0;
+        return numberOfPairs == 2 ? score * 2 : 0;
     }
 
     public int fourOfAKind(DiceRoll diceRoll)
     {
         int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
-            if (counts[i] >= 4)
+            if (counts[i] >= 4) {
                 return (i+1) * 4;
+            }
         }
         return 0;
     }
@@ -90,8 +92,9 @@ public class Yatzy1 {
     {
         int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
-            if (counts[i] >= 3)
+            if (counts[i] >= 3) {
                 return (i+1) * 3;
+            }
         }
         return 0;
     }
@@ -114,8 +117,8 @@ public class Yatzy1 {
         if (counts[1] == 1 &&
             counts[2] == 1 &&
             counts[3] == 1 &&
-            counts[4] == 1
-            && counts[5] == 1)
+            counts[4] == 1 &&
+            counts[5] == 1)
             return 20;
         return 0;
     }
@@ -124,27 +127,26 @@ public class Yatzy1 {
     {
         int[] counts = countOccurrences(diceRoll);
 
-        boolean _2 = false;
-        int i;
-        int _2_at = 0;
-        boolean _3 = false;
-        int _3_at = 0;
+        boolean isThereAPair = false;
+        int pairIndex = 0;
 
-        for (i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             if (counts[i] == 2) {
-                _2 = true;
-                _2_at = i + 1;
+                isThereAPair = true;
+                pairIndex = i + 1;
             }
         }
 
-        for (i = 0; i < 6; i++) {
+        boolean isThereThreeofAkind = false;
+        int threeOfAKindIndex = 0;
+        for (int i = 0; i < 6; i++) {
             if (counts[i] == 3) {
-                _3 = true;
-                _3_at = i + 1;
+                isThereThreeofAkind = true;
+                threeOfAKindIndex = i + 1;
             }
         }
 
-        return _2 && _3 ? _2_at * 2 + _3_at * 3 : 0;
+        return isThereAPair && isThereThreeofAkind ? pairIndex * 2 + threeOfAKindIndex * 3 : 0;
     }
 
     private static IntStream dices(DiceRoll diceRoll) {
