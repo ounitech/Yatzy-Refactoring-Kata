@@ -56,3 +56,12 @@ quickly a first plan for code refactoring. Further analysis will be conducted af
       - This will help us going further with refactoring and
         replacing the five ints with a the class DiceRoll or any other refactoring.
     - remove constructor and dices field
+
+#### Second Phase Progress
+
+- First careful analysis of production code logic and not just structure
+- Identify some common patterns and clues to future refactorings
+- Use Intellij IDE refactoring feature to extract DiceRoll class which is the input for all methods 
+- ![Alt text](./doc/refactoring_introduce_parameter_object.png)
+- Use Intellij IDE refactoring feature to make classes non static 
+- ![Alt text](./doc/refactoring_convert_to_instance_method.png)
