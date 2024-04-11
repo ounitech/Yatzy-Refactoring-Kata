@@ -54,12 +54,7 @@ public class Yatzy1 {
 
     public int onePair(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() -1]++;
-        counts[diceRoll.getD2() -1]++;
-        counts[diceRoll.getD3() -1]++;
-        counts[diceRoll.getD4() -1]++;
-        counts[diceRoll.getD5() -1]++;
+        int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
             if (counts[6-i-1] >= 2)
                 return (6-i)*2;
@@ -69,12 +64,7 @@ public class Yatzy1 {
 
     public int twoPairs(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() -1]++;
-        counts[diceRoll.getD2() -1]++;
-        counts[diceRoll.getD3() -1]++;
-        counts[diceRoll.getD4() -1]++;
-        counts[diceRoll.getD5() -1]++;
+        int[] counts = countOccurrences(diceRoll);
         int n = 0;
         int score = 0;
         for (int i = 0; i < 6; i ++){
@@ -88,12 +78,7 @@ public class Yatzy1 {
 
     public int fourOfAKind(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() -1]++;
-        counts[diceRoll.getD2() -1]++;
-        counts[diceRoll.getD3() -1]++;
-        counts[diceRoll.getD4() -1]++;
-        counts[diceRoll.getD5() -1]++;
+        int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
             if (counts[i] >= 4)
                 return (i+1) * 4;
@@ -103,12 +88,7 @@ public class Yatzy1 {
 
     public int threeOfAKind(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() -1]++;
-        counts[diceRoll.getD2() -1]++;
-        counts[diceRoll.getD3() -1]++;
-        counts[diceRoll.getD4() -1]++;
-        counts[diceRoll.getD5() -1]++;
+        int[] counts = countOccurrences(diceRoll);
         for (int i = 0; i < 6; i++){
             if (counts[i] >= 3)
                 return (i+1) * 3;
@@ -118,12 +98,7 @@ public class Yatzy1 {
 
     public int smallStraight(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() - 1]++;
-        counts[diceRoll.getD2() - 1]++;
-        counts[diceRoll.getD3() - 1]++;
-        counts[diceRoll.getD4() - 1]++;
-        counts[diceRoll.getD5() - 1]++;
+        int[] counts = countOccurrences(diceRoll);
         if (counts[0] == 1 &&
             counts[1] == 1 &&
             counts[2] == 1 &&
@@ -135,12 +110,7 @@ public class Yatzy1 {
 
     public int largeStraight(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() - 1]++;
-        counts[diceRoll.getD2() - 1]++;
-        counts[diceRoll.getD3() - 1]++;
-        counts[diceRoll.getD4() - 1]++;
-        counts[diceRoll.getD5() - 1]++;
+        int[] counts = countOccurrences(diceRoll);
         if (counts[1] == 1 &&
             counts[2] == 1 &&
             counts[3] == 1 &&
@@ -152,12 +122,7 @@ public class Yatzy1 {
 
     public int fullHouse(DiceRoll diceRoll)
     {
-        int[] counts = new int[6];
-        counts[diceRoll.getD1() - 1]++;
-        counts[diceRoll.getD2() - 1]++;
-        counts[diceRoll.getD3() - 1]++;
-        counts[diceRoll.getD4() - 1]++;
-        counts[diceRoll.getD5() - 1]++;
+        int[] counts = countOccurrences(diceRoll);
 
         boolean _2 = false;
         int i;
@@ -190,6 +155,25 @@ public class Yatzy1 {
             diceRoll.getD4(),
             diceRoll.getD5()
         );
+    }
+
+
+    /**
+     * calculate the occurrence of a number in a DiceRoll
+     * and returns an array with these occurrences at index-1
+     *  The occurrence of ones is in index 0
+     *  The occurrence of sixes is in index 5
+     * @param diceRoll
+     * @return array of size 5
+     */
+    private static int[] countOccurrences(DiceRoll diceRoll) {
+        int[] counts = new int[6];
+        counts[diceRoll.getD1() -1]++;
+        counts[diceRoll.getD2() -1]++;
+        counts[diceRoll.getD3() -1]++;
+        counts[diceRoll.getD4() -1]++;
+        counts[diceRoll.getD5() -1]++;
+        return counts;
     }
 }
 
