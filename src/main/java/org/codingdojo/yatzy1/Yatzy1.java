@@ -80,22 +80,25 @@ public class Yatzy1 {
         return sum;
     }
 
-    public int fives()
-    {
-        int s = 0;
-        int i;
-        for (i = 0; i < dice.length; i++) 
-            if (dice[i] == 5)
-                s = s + 5;
-        return s;
-    }
-
-    public int sixes()
+    public static int fives(int d1, int d2, int d3, int d4, int d5)
     {
         int sum = 0;
-        for (int at = 0; at < dice.length; at++) 
-            if (dice[at] == 6)
-                sum = sum + 6;
+        if (d1 == 5) sum += 5;
+        if (d2 == 5) sum += 5;
+        if (d3 == 5) sum += 5;
+        if (d4 == 5) sum += 5;
+        if (d5 == 5) sum += 5;
+        return sum;
+    }
+
+    public static int sixes(int d1, int d2, int d3, int d4, int d5)
+    {
+        int sum = 0;
+        if (d1 == 6) sum += 6;
+        if (d2 == 6) sum += 6;
+        if (d3 == 6) sum += 6;
+        if (d4 == 6) sum += 6;
+        if (d5 == 6) sum += 6;
         return sum;
     }
 

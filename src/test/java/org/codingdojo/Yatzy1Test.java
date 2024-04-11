@@ -53,17 +53,17 @@ public class Yatzy1Test {
 
     @Test
     public void fives_sum_of_fives() {
-        assertEquals(10, new Yatzy1(4,4,4,5,5).fives());
-        assertEquals(15, new Yatzy1(4,4,5,5,5).fives());
-        assertEquals(20, new Yatzy1(4,5,5,5,5).fives());
-        assertEquals(0, new Yatzy1(4,3,3,2,1).fives());
+        assertEquals(10, Yatzy1.fives(4,4,4,5,5));
+        assertEquals(15, Yatzy1.fives(4,4,5,5,5));
+        assertEquals(20, Yatzy1.fives(4,5,5,5,5));
+        assertEquals(0, Yatzy1.fives(4,3,3,2,1));
     }
 
     @Test
     public void sixes_sum_of_sixes() {
-        assertEquals(0, new Yatzy1(4,4,4,5,5).sixes());
-        assertEquals(6, new Yatzy1(4,4,6,5,5).sixes());
-        assertEquals(18, new Yatzy1(6,5,6,6,5).sixes());
+        assertEquals(0, Yatzy1.sixes(4,4,4,5,5));
+        assertEquals(6, Yatzy1.sixes(4,4,6,5,5));
+        assertEquals(18, Yatzy1.sixes(6,5,6,6,5));
     }
 
     @Test
