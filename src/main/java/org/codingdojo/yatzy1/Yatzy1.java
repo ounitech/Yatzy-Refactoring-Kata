@@ -69,15 +69,14 @@ public class Yatzy1 {
         return s;
     }
 
-    public int fours()
+    public static int fours(int d1, int d2, int d3, int d4, int d5)
     {
-        int sum;    
-        sum = 0;
-        for (int at = 0; at != 5; at++) {
-            if (dice[at] == 4) {
-                sum += 4;
-            }
-        }
+        int sum = 0;
+        if (d1 == 4) sum += 4;
+        if (d2 == 4) sum += 4;
+        if (d3 == 4) sum += 4;
+        if (d4 == 4) sum += 4;
+        if (d5 == 4) sum += 4;
         return sum;
     }
 

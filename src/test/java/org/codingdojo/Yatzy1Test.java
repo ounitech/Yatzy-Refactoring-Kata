@@ -45,10 +45,10 @@ public class Yatzy1Test {
     @Test
     public void fours_sum_of_fours()
     {
-        assertEquals(12, new Yatzy1(4,4,4,5,5).fours());
-        assertEquals(8, new Yatzy1(4,4,5,5,5).fours());
-        assertEquals(4, new Yatzy1(4,5,5,5,5).fours());
-        assertEquals(0, new Yatzy1(1,2,3,5,6).fours());
+        assertEquals(12, Yatzy1.fours(4,4,4,5,5));
+        assertEquals(8, Yatzy1.fours(4,4,5,5,5));
+        assertEquals(4, Yatzy1.fours(4,5,5,5,5));
+        assertEquals(0, Yatzy1.fours(1,2,3,5,6));
     }
 
     @Test
