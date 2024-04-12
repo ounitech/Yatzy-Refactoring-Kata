@@ -1,4 +1,4 @@
-package org.codingdojo;
+package org.codingdojo.yatzy1;
 
 import org.codingdojo.yatzy1.DiceRoll;
 import org.codingdojo.yatzy1.Yatzy1;
