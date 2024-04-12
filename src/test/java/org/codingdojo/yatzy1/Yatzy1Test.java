@@ -1,11 +1,8 @@
 package org.codingdojo.yatzy1;
 
-import org.codingdojo.yatzy1.DiceRoll;
-import org.codingdojo.yatzy1.Yatzy1;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class Yatzy1Test {
@@ -123,5 +120,12 @@ public class Yatzy1Test {
     public void full_house_sum_pair_plus_three_of_a_kind() {
         assertEquals(18, new Yatzy1().fullHouse(new DiceRoll(6, 2, 2, 2, 6)));
         assertEquals(0, new Yatzy1().fullHouse(new DiceRoll(2, 3, 4, 5, 6)));
+    }
+
+    @Test
+    public void countOccurrencesOfSide() {
+        assertArrayEquals(new int []{5, 0, 0, 0, 0, 0}, Yatzy1.countOccurrencesOfSide(new DiceRoll(1, 1, 1, 1, 1)));
+        assertArrayEquals(new int []{0, 0, 0, 0, 2, 3}, Yatzy1.countOccurrencesOfSide(new DiceRoll(5, 5, 6, 6, 6)));
+        assertArrayEquals(new int []{1, 1, 1, 1, 1, 0}, Yatzy1.countOccurrencesOfSide(new DiceRoll(1, 2, 3, 4, 5)));
     }
 }
