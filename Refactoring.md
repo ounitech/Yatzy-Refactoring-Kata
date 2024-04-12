@@ -21,7 +21,7 @@ After watching the video and reading the rules, I took a first glance at Yatzy1 
 - There is unit Test that seems to be covering all methods which is great because we can refactor safely code.
   Otherwise, we will have to write the tests first.
 
-#### TODO:
+#### Road Map Draft:
 
 - Further analysis of game rules described by Emily
 - Analyse and read the unit test
@@ -35,7 +35,7 @@ After watching the video and reading the rules, I took a first glance at Yatzy1 
       implementation will represent a score category (chance, pair, ...). But this will come after the first pass I
       think.
 
-#### Conclusion
+#### Early Notes
 
 The presence of unit test and the spotting of some easy to fix code flaws is encouraging since we could establish
 quickly a first plan for code refactoring. Further analysis will be conducted after this first pass.
@@ -52,18 +52,18 @@ quickly a first plan for code refactoring. Further analysis will be conducted af
 - First production code refactoring : Done (below details)
     - move constructor and field up
     - renaming all methods using camelCase
-    - make all methods static and receive as input the five dices 
-      - This will help us going further with refactoring and
-        replacing the five ints with a the class DiceRoll or any other refactoring.
+    - make all methods static and receive as input the five dices
+        - This will help us going further with refactoring and
+          replacing the five ints with a the class DiceRoll or any other refactoring.
     - remove constructor and dices field
 
 #### Second Phase Progress
 
 - First careful analysis of production code logic and not just structure
 - Identify some common patterns and clues to future refactorings
-- Use Intellij IDE refactoring feature to extract DiceRoll class which is the input for all methods 
+- Use Intellij IDE refactoring feature to extract DiceRoll class which is the input for all methods
 - ![Alt text](./doc/refactoring_introduce_parameter_object.png)
-- Use Intellij IDE refactoring feature to make classes non static 
+- Use Intellij IDE refactoring feature to make classes non static
 - ![Alt text](./doc/refactoring_convert_to_instance_method.png)
 
 #### Third Phase Progress
@@ -72,7 +72,7 @@ quickly a first plan for code refactoring. Further analysis will be conducted af
 - Spotted some code logic duplication.
 - Rewrite code to make it easier for IDE to identify duplicated blocks
 - Use Intellij refactoring feature to remove duplicates and put them in a single static method `countOccurrences`
-- ![Alt text](/home/mejdi/workspace/Yatzy-Refactoring-Kata/doc/refactoring_duplicates.png)
+- ![Alt text](./doc/refactoring_duplicates.png)
 
 #### Fourth Phase Progress
 
@@ -85,6 +85,7 @@ quickly a first plan for code refactoring. Further analysis will be conducted af
 - each method is self-contained and short enough to read
 - further improvements can be done. But this can be over-engineering since code is clear enough for now :
     - make `DiceRoll` a record
+    - add checks for dice sides in `DiceRoll` (only between 1 and 6)
     - refactor method `countOccurrencesOfSide` to make it return an object representing the occurrences of each side or
       number
     - create an in interface for game rules and create an implementation for each rule. We transform methods to
