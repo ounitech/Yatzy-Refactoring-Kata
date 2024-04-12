@@ -65,3 +65,11 @@ quickly a first plan for code refactoring. Further analysis will be conducted af
 - ![Alt text](./doc/refactoring_introduce_parameter_object.png)
 - Use Intellij IDE refactoring feature to make classes non static 
 - ![Alt text](./doc/refactoring_convert_to_instance_method.png)
+
+#### Third Phase Progress
+
+- Refactor of methods `chance, ones, twos, threes, fours, fives` using streams
+- Spotted some code logic duplication. 
+- Rewrite code to make it easier for IDE to identify duplicated blocks
+- Use Intellij refactoring feature to remove duplicates and put them in a single static method `countOccurrences`
+- ![Alt text](/home/mejdi/workspace/Yatzy-Refactoring-Kata/doc/refactoring_duplicates.png)
