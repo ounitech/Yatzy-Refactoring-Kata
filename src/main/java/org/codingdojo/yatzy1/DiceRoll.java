@@ -1,6 +1,7 @@
 package org.codingdojo.yatzy1;
 
 import java.util.Objects;
+import java.util.stream.IntStream;
 
 public final class DiceRoll {
 
@@ -16,6 +17,16 @@ public final class DiceRoll {
         this.d3 = d3;
         this.d4 = d4;
         this.d5 = d5;
+    }
+
+    public IntStream dices() {
+        return IntStream.of(
+            getD1(),
+            getD2(),
+            getD3(),
+            getD4(),
+            getD5()
+        );
     }
 
     public int getD5() {

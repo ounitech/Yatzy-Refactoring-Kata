@@ -1,12 +1,10 @@
 package org.codingdojo.yatzy1;
 
-import java.util.stream.IntStream;
-
 public class Yatzy1 {
 
     public int chance(DiceRoll diceRoll)
     {
-        return dices(diceRoll).sum();
+        return diceRoll.dices().sum();
     }
 
     public int yatzy(DiceRoll diceRoll)
@@ -21,30 +19,30 @@ public class Yatzy1 {
     }
 
     public int ones(DiceRoll diceRoll) {
-        return dices(diceRoll).filter(value -> value == 1).sum();
+        return diceRoll.dices().filter(value -> value == 1).sum();
     }
 
     public int twos(DiceRoll diceRoll) {
-        return dices(diceRoll).filter(value -> value == 2).sum();
+        return diceRoll.dices().filter(value -> value == 2).sum();
     }
 
     public int threes(DiceRoll diceRoll) {
-        return dices(diceRoll).filter(value -> value == 3).sum();
+        return diceRoll.dices().filter(value -> value == 3).sum();
     }
 
     public int fours(DiceRoll diceRoll)
     {
-        return dices(diceRoll).filter(value -> value == 4).sum();
+        return diceRoll.dices().filter(value -> value == 4).sum();
     }
 
     public int fives(DiceRoll diceRoll)
     {
-        return dices(diceRoll).filter(value -> value == 5).sum();
+        return diceRoll.dices().filter(value -> value == 5).sum();
     }
 
     public int sixes(DiceRoll diceRoll)
     {
-        return dices(diceRoll).filter(value -> value == 6).sum();
+        return diceRoll.dices().filter(value -> value == 6).sum();
     }
 
     public int onePair(DiceRoll diceRoll)
@@ -142,16 +140,6 @@ public class Yatzy1 {
         }
 
         return isThereAPair && isThereThreeofAkind ? pairIndex * 2 + threeOfAKindIndex * 3 : 0;
-    }
-
-    private static IntStream dices(DiceRoll diceRoll) {
-        return IntStream.of(
-            diceRoll.getD1(),
-            diceRoll.getD2(),
-            diceRoll.getD3(),
-            diceRoll.getD4(),
-            diceRoll.getD5()
-        );
     }
 
 
