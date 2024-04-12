@@ -159,7 +159,7 @@ public class Yatzy1 {
      * @param diceRoll
      * @return array of size 5
      */
-    private static int[] countOccurrencesOfSide(DiceRoll diceRoll) {
+    static int[] countOccurrencesOfSide(DiceRoll diceRoll) {
         int[] counts = new int[6];
         counts[diceRoll.getD1() -1]++;
         counts[diceRoll.getD2() -1]++;
