@@ -69,7 +69,23 @@ quickly a first plan for code refactoring. Further analysis will be conducted af
 #### Third Phase Progress
 
 - Refactor of methods `chance, ones, twos, threes, fours, fives` using streams
-- Spotted some code logic duplication. 
+- Spotted some code logic duplication.
 - Rewrite code to make it easier for IDE to identify duplicated blocks
 - Use Intellij refactoring feature to remove duplicates and put them in a single static method `countOccurrences`
 - ![Alt text](/home/mejdi/workspace/Yatzy-Refactoring-Kata/doc/refactoring_duplicates.png)
+
+#### Fourth Phase Progress
+
+- move method `dices` to more `DiceRoll`
+- rename method `countOccurrences` and add a unit test to better explain its role
+
+#### Final Notes and Possible improvements
+
+- code is clear enough for a developer to understand
+- each method is self-contained and short enough to read
+- further improvements can be done. But this can be over-engineering since code is clear enough for now :
+    - make `DiceRoll` a record
+    - refactor method `countOccurrencesOfSide` to make it return an object representing the occurrences of each side or
+      number
+    - create an in interface for game rules and create an implementation for each rule. We transform methods to
+      interface implementations
